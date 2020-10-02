@@ -2,10 +2,51 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:vm="clr-namespace:Avalonia_Ex02.ViewModels;assembly=Avalonia-Ex02"
-        xmlns:v="clr-namespace:Avalonia_Ex02.Views;assembly=Avalonia-Ex02"
+        xmlns:vm="clr-namespace:Avalonia_Ex02.ViewModels;assembly=Avalonia_Ex02"
+        xmlns:v="clr-namespace:Avalonia_Ex02.Views;assembly=Avalonia_Ex02"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Avalonia_Ex02.MainWindow"
-        Title="Avalonia_Ex02">
-Test
+        Title="{Binding Message}">
+
+  <Grid Margin="4">
+
+
+    <SplitView Name="splitLeft" 
+               PanePlacement="Left" 
+               PaneBackground="AliceBlue" 
+               OpenPaneLength="250" 
+               CompactPaneLength="30" 
+               DisplayMode="Inline" 
+               IsPaneOpen="True">
+      <SplitView.Pane>
+          <DockPanel DockPanel.Dock="Top" Margin="0 0 0 0">
+            <TextBlock Text="{Binding Message}"/>
+            <Button Name="btnNew" 
+                    Command="{Binding NewTest}" 
+                    DockPanel.Dock="Top" 
+                    Height="64">
+              Test Button 1
+            </Button>
+            <Button Name="btnOpen" 
+                    Command="{Binding OpenTest}" 
+                    DockPanel.Dock="Top" 
+                    Height="64">
+              Test Button 2
+            </Button>
+            
+            <Button x:Name="myButton" Height="64">
+              <DockPanel>
+                <Image Source="/Assets/excel.ico"/>
+                <TextBlock Text="{Binding Message}"/>
+              </DockPanel>
+            </Button>
+
+          </DockPanel>
+
+      </SplitView.Pane>
+    </SplitView>
+  </Grid>
+  
+
+  
 </Window>
