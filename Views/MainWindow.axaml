@@ -11,42 +11,67 @@
   <Grid Margin="4">
 
 
-    <SplitView Name="splitLeft" 
-               PanePlacement="Left" 
-               PaneBackground="AliceBlue" 
-               OpenPaneLength="250" 
-               CompactPaneLength="30" 
-               DisplayMode="Inline" 
-               IsPaneOpen="True">
+    <SplitView Name="splitLeft"
+               PanePlacement="Left"
+               PaneBackground="AliceBlue"
+               OpenPaneLength="200"
+               CompactPaneLength="16"
+               DisplayMode="CompactInline"
+               IsPaneOpen="True"
+               >
       <SplitView.Pane>
-          <DockPanel DockPanel.Dock="Top" Margin="0 0 0 0">
-            <TextBlock Text="{Binding Message}"/>
-            <Button Name="btnNew" 
-                    Command="{Binding NewTest}" 
-                    DockPanel.Dock="Top" 
-                    Height="64">
-              Test Button 1
-            </Button>
-            <Button Name="btnOpen" 
-                    Command="{Binding OpenTest}" 
-                    DockPanel.Dock="Top" 
-                    Height="64">
-              Test Button 2
-            </Button>
-            
-            <Button x:Name="myButton" Height="64">
-              <DockPanel>
-                <Image Source="/Assets/excel.ico"/>
-                <TextBlock Text="{Binding Message}"/>
-              </DockPanel>
-            </Button>
+        <StackPanel VerticalAlignment="Stretch" >
+          <TextBlock DockPanel.Dock="Top" Text="A Message"/>
 
-          </DockPanel>
+          <Button Name="myButton1" Height="50"
+                  HorizontalContentAlignment="Stretch"
+                  DockPanel.Dock="Top"
+                    >
+            <DockPanel HorizontalAlignment="Stretch">
+              <Image Source="/Assets/excel.ico"
+                     HorizontalAlignment="Left"
+                     Stretch="None"/>
+              <TextBlock Text="."
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Center"/>
+            </DockPanel>
+          </Button>
+
+          <Button Name="myButton2" Height="50"
+                  HorizontalContentAlignment="Stretch"
+                  DockPanel.Dock="Top"
+                    >
+            <DockPanel HorizontalAlignment="Stretch">
+              <Image Source="/Assets/excel.ico"
+                     HorizontalAlignment="Left"
+                     Stretch="None"/>
+              <TextBlock Text="."
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Center"/>
+            </DockPanel>
+          </Button>
+
+          <Button Name="myButton3" Height="50"
+                  HorizontalContentAlignment="Stretch"
+                  DockPanel.Dock="Top"
+                    >
+            <DockPanel HorizontalAlignment="Stretch">
+              <Image Source="/Assets/excel.ico"
+                     HorizontalAlignment="Left"
+                     Stretch="None"/>
+              <TextBlock Text="."
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Center"/>
+            </DockPanel>
+          </Button>
+
+
+
+        </StackPanel>
 
       </SplitView.Pane>
     </SplitView>
   </Grid>
-  
 
-  
+
 </Window>
