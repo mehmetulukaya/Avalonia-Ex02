@@ -21,11 +21,14 @@
                >
       <SplitView.Pane>
         <StackPanel VerticalAlignment="Stretch" >
-          <TextBlock DockPanel.Dock="Top" Text="A Message"/>
+          <TextBlock DockPanel.Dock="Top" Text="Message below:"/>
+          <TextBlock DockPanel.Dock="Top" Text="{Binding Message}"/>
 
           <Button Name="myButton1" Height="50"
                   HorizontalContentAlignment="Stretch"
                   DockPanel.Dock="Top"
+                  Command="{Binding MakeAMessage}"
+                  CommandParameter="My message"
                     >
             <DockPanel HorizontalAlignment="Stretch">
               <Image Source="/Assets/excel.ico"
@@ -36,6 +39,7 @@
                          VerticalAlignment="Center"/>
             </DockPanel>
           </Button>
+          <TextBlock DockPanel.Dock="Top" Text="{Binding Message}"/>
 
           <Button Name="myButton2" Height="50"
                   HorizontalContentAlignment="Stretch"
