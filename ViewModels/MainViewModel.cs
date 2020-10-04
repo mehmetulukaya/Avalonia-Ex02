@@ -17,6 +17,9 @@ namespace Avalonia_Ex02.ViewModels
         public void MakeAMessage(string msg)
         {
             Message = msg;
+            var messageBoxStandardWindow = MessageBox.Avalonia.MessageBoxManager
+                .GetMessageBoxStandardWindow("title", msg);
+            messageBoxStandardWindow.Show();
         }
     }
 

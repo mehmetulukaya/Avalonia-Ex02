@@ -8,12 +8,13 @@
     <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview5" />
     <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-preview5" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-preview5" />
+    <PackageReference Include="MessageBox.Avalonia" Version="0.10.0-prev2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Assets\" />
   </ItemGroup>
 <ItemGroup>
-  <AvaloniaResource Include="Assets\*"/>
+  <AvaloniaResource Include="Assets\*" />
 </ItemGroup>  
 </Project>
