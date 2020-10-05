@@ -8,6 +8,7 @@
         x:Class="Avalonia_Ex02.MainWindow"
         Title="{Binding Message}">
 
+  <!--
   <Window.Styles>
     <Style Selector="Button /template/ ContentPresenter">
       <Setter Property="CornerRadius" Value="5"/>
@@ -19,7 +20,7 @@
       <Setter Property="BorderThickness" Value="2"/>
     </Style>
   </Window.Styles>
-
+  -->
 
   <Grid Margin="4">
 
@@ -27,7 +28,7 @@
                PanePlacement="Left"
                PaneBackground="AliceBlue"
                OpenPaneLength="200"
-               CompactPaneLength="40"
+               CompactPaneLength="60"
                DisplayMode="CompactOverlay"
                IsPaneOpen="{Binding PaneOpen}"
                >
@@ -45,7 +46,7 @@
               <Image Source="/Assets/excel.ico"
                      HorizontalAlignment="Left"
                      Stretch="None"/>
-              <TextBlock Text="Button test"
+              <TextBlock Text="Collapse test"
                          HorizontalAlignment="Left"
                          VerticalAlignment="Center"/>
             </DockPanel>

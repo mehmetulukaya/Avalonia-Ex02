@@ -19,12 +19,13 @@ namespace Avalonia_Ex02
                   var msBoxStandardWindow = MessageBox.Avalonia.MessageBoxManager
                       .GetMessageBoxStandardWindow(new MessageBoxStandardParams
                       {
+                          CanResize = false,
                           ButtonDefinitions = ButtonEnum.OkAbort,
                           ContentTitle = "Title",
                           ContentMessage = "Message",
                           Icon = MessageBox.Avalonia.Enums.Icon.Plus,
                           WindowStartupLocation = WindowStartupLocation.CenterOwner,
-                          Style = Style.UbuntuLinux
+                          Style = Style.None
                       });
                   msBoxStandardWindow.ShowDialog(this);
                   
