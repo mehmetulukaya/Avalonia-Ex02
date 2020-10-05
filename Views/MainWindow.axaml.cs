@@ -4,6 +4,10 @@ using Avalonia.Markup.Xaml;
 using MessageBox.Avalonia.DTO;
 using MessageBox.Avalonia.Enums;
 
+using System;
+using ReactiveUI;
+using Avalonia_Ex02.Views;
+
 namespace Avalonia_Ex02
 {
     public class MainWindow : Window
@@ -28,9 +32,22 @@ namespace Avalonia_Ex02
                           Style = Style.None
                       });
                   msBoxStandardWindow.ShowDialog(this);
-                  
+
               };
-        
+
+            StyleManager styles = new StyleManager(this);
+            this.FindControl<Button>("themeChange").Click += delegate
+            {
+                styles.UseTheme(styles.CurrentTheme switch
+                {
+                    StyleManager.Theme.Citrus => StyleManager.Theme.Sea,
+                    StyleManager.Theme.Sea => StyleManager.Theme.Rust,
+                    StyleManager.Theme.Rust => StyleManager.Theme.Candy,
+                    StyleManager.Theme.Candy => StyleManager.Theme.Magma,
+                    StyleManager.Theme.Magma => StyleManager.Theme.Citrus,
+                    _ => throw new ArgumentOutOfRangeException(nameof(styles.CurrentTheme))
+                });
+            };
         }
 
         private void InitializeComponent()

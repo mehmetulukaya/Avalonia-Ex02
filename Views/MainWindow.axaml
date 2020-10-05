@@ -6,6 +6,7 @@
         xmlns:v="clr-namespace:Avalonia_Ex02.Views;assembly=Avalonia_Ex02"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Avalonia_Ex02.MainWindow"
+        Background="{DynamicResource ThemeBackgroundColor}"
         Title="{Binding Message}">
 
   <!--
@@ -24,9 +25,9 @@
 
   <Grid Margin="4">
 
+    <!-- PaneBackground="AliceBlue" -->
     <SplitView Name="splitLeft"
                PanePlacement="Left"
-               PaneBackground="AliceBlue"
                OpenPaneLength="200"
                CompactPaneLength="60"
                DisplayMode="CompactOverlay"
@@ -70,6 +71,20 @@
           </Button>
 
           <Button Name="myButton3" Height="50"
+                  HorizontalContentAlignment="Stretch"
+                  DockPanel.Dock="Top"
+                    >
+            <DockPanel HorizontalAlignment="Stretch">
+              <Image Source="/Assets/excel.ico"
+                     HorizontalAlignment="Left"
+                     Stretch="None"/>
+              <TextBlock Text="."
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Center"/>
+            </DockPanel>
+          </Button>
+
+          <Button Name="themeChange" Height="50"
                   HorizontalContentAlignment="Stretch"
                   DockPanel.Dock="Top"
                     >

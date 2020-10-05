@@ -3,7 +3,10 @@
              xmlns:local="clr-namespace:Avalonia_Ex02"
              x:Class="Avalonia_Ex02.App">
     <Application.Styles>
+      
       <StyleInclude Source="avares://Citrus.Avalonia/Citrus.xaml"/>
+      
+      <!-- <StyleInclude Source="avares://Citrus.Avalonia/Citrus.xaml"/> -->
       <!-- To use other themes:
          1. Comment out *all* of the <StyleInclude /> lines.
          2. Uncomment *one* of the <StyleInclude /> lines below. -->
