@@ -19,17 +19,17 @@
       <Setter Property="BorderThickness" Value="2"/>
     </Style>
   </Window.Styles>
-  
-  <Grid Margin="4">
 
+
+  <Grid Margin="4">
 
     <SplitView Name="splitLeft"
                PanePlacement="Left"
                PaneBackground="AliceBlue"
                OpenPaneLength="200"
-               CompactPaneLength="16"
-               DisplayMode="CompactInline"
-               IsPaneOpen="True"
+               CompactPaneLength="40"
+               DisplayMode="CompactOverlay"
+               IsPaneOpen="{Binding PaneOpen}"
                >
       <SplitView.Pane>
         <StackPanel VerticalAlignment="Stretch" >
@@ -39,14 +39,13 @@
           <Button Name="myButton1" Height="50"
                   HorizontalContentAlignment="Stretch"
                   DockPanel.Dock="Top"
-                  Command="{Binding MakeAMessage}"
-                  CommandParameter="My message"
+                  Command="{Binding PaneOpenClose}"
                     >
             <DockPanel HorizontalAlignment="Stretch">
               <Image Source="/Assets/excel.ico"
                      HorizontalAlignment="Left"
                      Stretch="None"/>
-              <TextBlock Text="."
+              <TextBlock Text="Button test"
                          HorizontalAlignment="Left"
                          VerticalAlignment="Center"/>
             </DockPanel>
@@ -56,6 +55,8 @@
           <Button Name="myButton2" Height="50"
                   HorizontalContentAlignment="Stretch"
                   DockPanel.Dock="Top"
+                  Command="{Binding MakeAMessage}"
+                  CommandParameter="My message"
                     >
             <DockPanel HorizontalAlignment="Stretch">
               <Image Source="/Assets/excel.ico"
@@ -86,8 +87,13 @@
         </StackPanel>
 
       </SplitView.Pane>
+      <Grid>
+        <TextBlock Text="SplitView Contents" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+      </Grid>      
     </SplitView>
-  </Grid>
+    
 
+
+  </Grid>
 
 </Window>
