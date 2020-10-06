@@ -99,13 +99,28 @@
             </DockPanel>
           </Button>
 
+          <Button Name="nextPage" Height="50"
+                  HorizontalContentAlignment="Stretch"
+                  DockPanel.Dock="Top"
+                  Command="{Binding PageChange}"
+                    >
+            <DockPanel HorizontalAlignment="Stretch">
+              <Image Source="/Assets/file.ico"
+                     HorizontalAlignment="Left"
+                     Stretch="None"/>
+              <TextBlock Text="."
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Center"/>
+            </DockPanel>
+          </Button>
+
         </StackPanel>
 
       </SplitView.Pane>
       <Grid>
         <StackPanel VerticalAlignment="Stretch" >
           
-          <TabControl Name="Sidebar">
+          <TabControl Name="Sidebar" SelectedIndex="{Binding PageIndex}">
             <TabItem Header="Page1">
               <pages:Page1/>
             </TabItem>

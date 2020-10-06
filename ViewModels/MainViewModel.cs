@@ -55,9 +55,25 @@ namespace Avalonia_Ex02.ViewModels
             msBoxStandardWindow.Show();
 
         }
-        
 
-        
+        private int pageindex = 0;
+        public int PageIndex
+        {
+            get => pageindex;
+            set => this.RaiseAndSetIfChanged(ref pageindex, value);
+        }
+
+        public void PageChange()
+        {
+            if (PageIndex >= 2)
+            { 
+                PageIndex = 0;
+            }
+            else
+                PageIndex++;
+        }
+
+
     }
 
 }
