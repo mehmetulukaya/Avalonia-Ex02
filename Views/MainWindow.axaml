@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:Avalonia_Ex02.ViewModels;assembly=Avalonia_Ex02"
         xmlns:v="clr-namespace:Avalonia_Ex02.Views;assembly=Avalonia_Ex02"
+        xmlns:pages="clr-namespace:Avalonia_Ex02.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Avalonia_Ex02.MainWindow"
         Background="{DynamicResource ThemeBackgroundColor}"
@@ -89,7 +90,7 @@
                   DockPanel.Dock="Top"
                     >
             <DockPanel HorizontalAlignment="Stretch">
-              <Image Source="/Assets/excel.ico"
+              <Image Source="/Assets/settings.ico"
                      HorizontalAlignment="Left"
                      Stretch="None"/>
               <TextBlock Text="."
@@ -98,15 +99,24 @@
             </DockPanel>
           </Button>
 
-
-
         </StackPanel>
 
       </SplitView.Pane>
       <Grid>
         <StackPanel VerticalAlignment="Stretch" >
-          <TextBlock Text="SplitView Contents" 
-                     HorizontalAlignment="Center"/>
+          
+          <TabControl Name="Sidebar">
+            <TabItem Header="Page1">
+              <pages:Page1/>
+            </TabItem>
+            <TabItem Header="Page2">
+              <pages:Page2/>
+            </TabItem>
+          </TabControl>
+          
+          <TextBlock Text="Default page" 
+                     Margin="2 2 2 2"
+                     HorizontalAlignment="Left"/>
          
           <TextBlock DockPanel.Dock="Top" 
                      Margin="2 2 2 2"
@@ -120,8 +130,6 @@
       </Grid>      
     </SplitView>
     
-
-
   </Grid>
 
 </Window>
