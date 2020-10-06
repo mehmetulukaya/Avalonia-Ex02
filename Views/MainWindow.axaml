@@ -104,7 +104,19 @@
 
       </SplitView.Pane>
       <Grid>
-        <TextBlock Text="SplitView Contents" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <StackPanel VerticalAlignment="Stretch" >
+          <TextBlock Text="SplitView Contents" 
+                     HorizontalAlignment="Center"/>
+         
+          <TextBlock DockPanel.Dock="Top" 
+                     Margin="2 2 2 2"
+                     Text="Message below:"
+                     />
+          <TextBlock DockPanel.Dock="Top" 
+                     Margin="2 2 2 2"
+                     Text="{Binding Message}"
+                    />
+        </StackPanel>
       </Grid>      
     </SplitView>
     
