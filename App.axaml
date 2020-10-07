@@ -3,7 +3,7 @@
              xmlns:local="clr-namespace:Avalonia_Ex02"
              x:Class="Avalonia_Ex02.App">
     <Application.Styles>
-      
+
       <StyleInclude Source="avares://Citrus.Avalonia/Sea.xaml"/>
       
       <!-- <StyleInclude Source="avares://Citrus.Avalonia/Citrus.xaml"/> -->

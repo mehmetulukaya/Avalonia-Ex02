@@ -18,6 +18,11 @@
                  Margin="2 2 2 2"
                  Text="{Binding Message}"
                     />
+      <TextBlock Classes="Heading" Text="Rich controls" />
+      <StackPanel Orientation="Horizontal">
+        <TextBox Classes="Badge" Text="Regular badge" Margin="0 5 10 5" />
+        <TextBox Classes="PrimaryBadge" Text="Primary badge" />
+      </StackPanel>
     </StackPanel>
   </Grid>
 </UserControl>

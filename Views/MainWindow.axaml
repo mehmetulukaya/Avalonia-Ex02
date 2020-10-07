@@ -8,6 +8,7 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Avalonia_Ex02.MainWindow"
         Background="{DynamicResource ThemeBackgroundColor}"
+        WindowState="Maximized"
         Title="{Binding Message}">
 
   <!--
@@ -16,23 +17,26 @@
       <Setter Property="CornerRadius" Value="5"/>
     </Style>
     <Style Selector="Button">
-      <Setter Property="Foreground" Value="#FFFFFFFF"/>
+      <Setter Property="Foreground" Value="#ffffff"/>
       <Setter Property="Background" Value="#0080ff"/>
-      <Setter Property="BorderBrush" Value="#FFFFFFFF"/>
+      <Setter Property="BorderBrush" Value="#ffffff"/>
       <Setter Property="BorderThickness" Value="2"/>
+      <Setter Property="FontFamily" Value="Ubuntu"/>
     </Style>
   </Window.Styles>
   -->
 
-  <Grid Margin="4">
+  <Grid Margin="4" ShowGridLines="True" RowDefinitions="">
 
     <!-- PaneBackground="AliceBlue" -->
     <SplitView Name="splitLeft"
                PanePlacement="Left"
                OpenPaneLength="200"
-               CompactPaneLength="60"
+               CompactPaneLength="50"
                DisplayMode="CompactOverlay"
                IsPaneOpen="{Binding PaneOpen}"
+               Margin="5 5 5 5"
+               IsVisible="True"
                >
       <SplitView.Pane>
         <StackPanel VerticalAlignment="Stretch" >
@@ -43,71 +47,79 @@
                   HorizontalContentAlignment="Stretch"
                   DockPanel.Dock="Top"
                   Command="{Binding PaneOpenClose}"
+                  Classes="Primary"
                     >
             <DockPanel HorizontalAlignment="Stretch">
-              <Image Source="/Assets/excel.ico"
+              <Image Source="/Assets/home.png"
                      HorizontalAlignment="Left"
-                     Stretch="None"/>
+                     Stretch="Uniform"/>
               <TextBlock Text="Collapse test"
                          HorizontalAlignment="Left"
-                         VerticalAlignment="Center"/>
+                         VerticalAlignment="Center"
+                         Margin="5 0 0 0"
+                         />
             </DockPanel>
           </Button>
           <TextBlock DockPanel.Dock="Top" Text="{Binding Message}"/>
 
-          <Button Name="myButton2" Height="50"
+          <Button Name="myButton2" Height="48"
                   HorizontalContentAlignment="Stretch"
                   DockPanel.Dock="Top"
                   Command="{Binding MakeAMessage}"
                   CommandParameter="My message"
+                  Classes="Primary"
                     >
             <DockPanel HorizontalAlignment="Stretch">
               <Image Source="/Assets/excel.ico"
                      HorizontalAlignment="Left"
-                     Stretch="None"/>
+                     Stretch="Uniform"/>
+              <TextBlock Text="."
+                         Classes="Caption"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Center"/>
+            </DockPanel>
+          </Button>
+
+          <Button Name="myButton3" Height="48"
+                  HorizontalContentAlignment="Stretch"
+                  DockPanel.Dock="Top"
+                  Classes="Primary"
+                    >
+            <DockPanel HorizontalAlignment="Stretch">
+              <Image Source="/Assets/excel.ico"
+                     HorizontalAlignment="Left"
+                     Stretch="Uniform"/>
               <TextBlock Text="."
                          HorizontalAlignment="Left"
                          VerticalAlignment="Center"/>
             </DockPanel>
           </Button>
 
-          <Button Name="myButton3" Height="50"
+          <Button Name="themeChange" Height="48"
                   HorizontalContentAlignment="Stretch"
                   DockPanel.Dock="Top"
-                    >
-            <DockPanel HorizontalAlignment="Stretch">
-              <Image Source="/Assets/excel.ico"
-                     HorizontalAlignment="Left"
-                     Stretch="None"/>
-              <TextBlock Text="."
-                         HorizontalAlignment="Left"
-                         VerticalAlignment="Center"/>
-            </DockPanel>
-          </Button>
-
-          <Button Name="themeChange" Height="50"
-                  HorizontalContentAlignment="Stretch"
-                  DockPanel.Dock="Top"
+                  Classes="Primary"
                     >
             <DockPanel HorizontalAlignment="Stretch">
               <Image Source="/Assets/settings.ico"
                      HorizontalAlignment="Left"
-                     Stretch="None"/>
+                     Stretch="Uniform"/>
               <TextBlock Text="."
                          HorizontalAlignment="Left"
                          VerticalAlignment="Center"/>
             </DockPanel>
           </Button>
 
-          <Button Name="nextPage" Height="50"
+          <Button Name="nextPage" Height="48"
                   HorizontalContentAlignment="Stretch"
                   DockPanel.Dock="Top"
                   Command="{Binding PageChange}"
+                  Classes="Primary"
                     >
             <DockPanel HorizontalAlignment="Stretch">
               <Image Source="/Assets/file.ico"
                      HorizontalAlignment="Left"
-                     Stretch="None"/>
+                     Stretch="Uniform"/>
               <TextBlock Text="."
                          HorizontalAlignment="Left"
                          VerticalAlignment="Center"/>
@@ -120,7 +132,10 @@
       <Grid>
         <StackPanel VerticalAlignment="Stretch" >
           
-          <TabControl Name="Sidebar" SelectedIndex="{Binding PageIndex}">
+          <TabControl Name="Sidebar" 
+                      SelectedIndex="{Binding PageIndex}"
+                      Margin="5 5 5 5"
+                      >
             <TabItem Header="Page1">
               <pages:Page1/>
             </TabItem>
@@ -132,7 +147,7 @@
           <TextBlock Text="Default page" 
                      Margin="2 2 2 2"
                      HorizontalAlignment="Left"/>
-         
+          
           <TextBlock DockPanel.Dock="Top" 
                      Margin="2 2 2 2"
                      Text="Message below:"
