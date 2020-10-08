@@ -43,7 +43,7 @@
           <TextBlock DockPanel.Dock="Top" Text="Message below:"/>
           <TextBlock DockPanel.Dock="Top" Text="{Binding Message}"/>
 
-          <Button Name="myButton1" Height="50"
+          <Button Name="myButton1" Height="48"
                   HorizontalContentAlignment="Stretch"
                   DockPanel.Dock="Top"
                   Command="{Binding PaneOpenClose}"
