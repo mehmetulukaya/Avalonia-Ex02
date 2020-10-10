@@ -5,48 +5,37 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Avalonia_Ex02.Views.Page1">
   <Grid>
-    <StackPanel VerticalAlignment="Stretch" >
-      <TextBlock Text="Page ONE"
-                 Margin="2 2 2 2"
-                 HorizontalAlignment="Center"/>
+    <StackPanel Orientation="Vertical" Spacing="4">
+      <TextBlock Classes="h1">ScrollViewer</TextBlock>
+      <TextBlock Classes="h2">Allows for horizontal and vertical content scrolling.</TextBlock>
 
-      <TextBlock DockPanel.Dock="Top"
-                 Margin="2 2 2 2"
-                 Text="Message below:"
-                     />
-      <TextBlock DockPanel.Dock="Top"
-                 Margin="2 2 2 2"
-                 Text="{Binding Message}"
-                    />
-      <TextBlock Classes="Heading" Text="Rich controls" />
-      <StackPanel Orientation="Horizontal">
-        <TextBox Classes="Badge" Text="Regular badge" Margin="0 5 10 5" />
-        <TextBox Classes="PrimaryBadge" Text="Primary badge" />
-      </StackPanel>
-      <!-- Slider and progress bar -->
-      <Slider Name="slider" Orientation="Horizontal" Value="35" Height="20" />
-      <ProgressBar Orientation="Horizontal"
-                   Margin="0 5"
-                   Height="20">
-        <ProgressBar.Value>
-          <Binding Path="#slider.Value" />
-        </ProgressBar.Value>
-      </ProgressBar>
-      <Grid Margin="0 5">
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="*" />
-          <ColumnDefinition Width="*" />
-          <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <RadioButton Grid.Column="0"
-                     Content="Radio option" />
-        <RadioButton Grid.Column="1"
-                     IsChecked="True"
-                     Content="Another one" />
-        <CheckBox Grid.Column="2"
-                  IsChecked="True"
-                  Content="Check me!" />
-      </Grid>    
-    </StackPanel>
+      <Grid ColumnDefinitions="Auto, *">
+        <StackPanel Orientation="Vertical" Spacing="4">
+          <ToggleSwitch IsChecked="{Binding AllowAutoHide}" Content="Allow auto hide" />
+
+          <StackPanel Orientation="Vertical" Spacing="4">
+            <TextBlock Text="Horizontal Scroll" />
+            <ComboBox Items="{Binding AvailableVisibility}" SelectedItem="{Binding HorizontalScrollVisibility}" />
+          </StackPanel>
+
+          <StackPanel Orientation="Vertical" Spacing="4">
+            <TextBlock Text="Vertical Scroll" />
+            <ComboBox Items="{Binding AvailableVisibility}" SelectedItem="{Binding VerticalScrollVisibility}" />
+          </StackPanel>
+        </StackPanel>
+
+        <ScrollViewer x:Name="ScrollViewer"
+                      Grid.Column="1"
+                      Width="400" Height="400"
+                      AllowAutoHide="{Binding AllowAutoHide}"
+                      HorizontalScrollBarVisibility="{Binding HorizontalScrollVisibility}"
+                      VerticalScrollBarVisibility="{Binding VerticalScrollVisibility}">
+          <Image Width="800" Height="800" Stretch="UniformToFill"
+                 Source="/Assets/save.ico" />
+        </ScrollViewer>
+      </Grid>
+
+    </StackPanel>    
+    
   </Grid>
 </UserControl>
