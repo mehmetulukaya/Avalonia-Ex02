@@ -142,6 +142,9 @@
             <TabItem Header="Page2">
               <pages:Page2/>
             </TabItem>
+            <TabItem Header="Editor">
+              <pages:Page3/>
+            </TabItem>
           </TabControl>
           
           <TextBlock Text="Default page" 
