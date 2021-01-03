@@ -2,10 +2,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:AvalonEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+             xmlns:ae="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+             xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"             
+             xmlns:behaviors="using:Avalonia_Ex02.Behaviors"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Avalonia_Ex02.Views.Page3">
   <Grid>
+    <DockPanel>
+        <ae:TextEditor x:Name="textCode"
+                       Margin="10"
+                       Background="White"
+                       Foreground="Black"
+                       SyntaxHighlighting="JavaScript"
+                       HorizontalScrollBarVisibility="Auto"
+                       VerticalScrollBarVisibility="Auto"
+                       FontFamily="{DynamicResource CodeFontFamily}"
+                       FontWeight="Normal"
+                       FontSize="14"
+                       WordWrap="False"
+                       Height="400"
+                       DockPanel.Dock="Top"
+                       >
+            <i:Interaction.Behaviors>
+                <behaviors:DocumentTextBindingBehavior Text="{Binding Code, Mode=TwoWay}" />
+            </i:Interaction.Behaviors>
+        </ae:TextEditor>
+        <TextBlock Text="{Binding Code}" Height="100" DockPanel.Dock="Bottom"/>
+    </DockPanel>
+    <!--
     <DockPanel>
         <StackPanel Orientation="Horizontal"
                     DockPanel.Dock="Top"
@@ -15,7 +39,30 @@
             <Button Name="addControlBtn" Content="Add Button" />
             <Button Name="clearControlBtn" Content="Clear Buttons" />
         </StackPanel>
-        <AvalonEdit:TextEditor Name="Editor"
+        <ae:TextEditor Name="textCode"
+                    Margin="0"
+                    Background="White"
+                    Foreground="Black"
+                    SyntaxHighlighting="C#"
+                    HorizontalScrollBarVisibility="Auto"
+                    VerticalScrollBarVisibility="Auto"
+                    FontFamily="{DynamicResource CodeFontFamily}" 
+                    FontWeight="Normal" 
+                    FontSize="14"
+                    WordWrap="False"
+                    >
+          <i:Interaction.Behaviors>
+              <behaviors:DocumentTextBindingBehavior Text="{Binding Code, Mode=TwoWay}"/>
+          </i:Interaction.Behaviors>
+
+
+        </ae:TextEditor>
+        -->
+        <!--
+            <i:Interaction.Behaviors>
+                <behaviors:DocumentTextBindingBehavior Text="{Binding Code, Mode=TwoWay}"/>
+            </i:Interaction.Behaviors>
+                            <AvalonEdit:TextEditor Name="Editor"
                                Background="Gray"
                                Margin="30"
                                Foreground="White"
@@ -24,5 +71,6 @@
                                VerticalScrollBarVisibility="Visible"
                                TextBlock.FontSize="30" />
     </DockPanel>
+        -->
   </Grid>
 </UserControl>

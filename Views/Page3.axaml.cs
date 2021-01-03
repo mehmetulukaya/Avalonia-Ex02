@@ -20,7 +20,7 @@ using AvaloniaEdit.Rendering;
 
 using AvaloniaEdit;
 using ReactiveUI;
-
+using AvaloniaEdit.Indentation.CSharp;
 
 namespace Avalonia_Ex02.Views
 {
@@ -28,6 +28,12 @@ namespace Avalonia_Ex02.Views
 
     public class Page3PageViewModel : ReactiveObject
     {
+        private string _code;
+        public string Code
+        {
+            get=>_code;
+            set=>this.RaiseAndSetIfChanged(ref _code,value);
+        }
     }
     public class Page3 : UserControl
     {
@@ -42,21 +48,22 @@ namespace Avalonia_Ex02.Views
         {
             this.InitializeComponent();
 
-            _textEditor = this.FindControl<TextEditor>("Editor");
+            _textEditor = this.FindControl<TextEditor>("textCode");
             _textEditor.Background = Brushes.Transparent;
             _textEditor.ShowLineNumbers = true;
-            _textEditor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinition("C#");
+            _textEditor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinition("JavaScipt");
             _textEditor.TextArea.TextEntered += textEditor_TextArea_TextEntered;
             _textEditor.TextArea.TextEntering += textEditor_TextArea_TextEntering;
             // _textEditor.TextArea.IndentationStrategy = new Indentation.CSharp.CSharpIndentationStrategy();
-            _textEditor.TextArea.IndentationStrategy = new AvaloniaEdit.Indentation.CSharp.CSharpIndentationStrategy();
+            _textEditor.TextArea.IndentationStrategy = new CSharpIndentationStrategy();
 
+            /*
             _addControlBtn = this.FindControl<Button>("addControlBtn");
             _addControlBtn.Click += _addControlBtn_Click;
 
             _clearControlBtn = this.FindControl<Button>("clearControlBtn");
             _clearControlBtn.Click += _clearControlBtn_Click; ;
-
+            */
             _textEditor.TextArea.TextView.ElementGenerators.Add(_generator);
 
             this.AddHandler(PointerWheelChangedEvent, (o, i) =>

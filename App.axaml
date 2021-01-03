@@ -5,6 +5,7 @@
     <Application.Styles>
 
       <StyleInclude Source="avares://Citrus.Avalonia/Candy.xaml"/>
+      <StyleInclude Source="avares://AvaloniaEdit/AvaloniaEdit.xaml" />
 
       <!--
       <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
